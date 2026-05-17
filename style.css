@@ -387,3 +387,9 @@ body::before{
   .skills-inner{grid-template-columns:1fr;}
   .skill-bar-outer{width:100px;}
 }
+a.proj-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
