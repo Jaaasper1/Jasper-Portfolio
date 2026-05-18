@@ -95,7 +95,7 @@ function drawFlashlight() {
 drawFlashlight();
 
 /* MOBILE TAP TO REVEAL PROJECT CARDS */
-if ('ontouchstart' in window) {
+if (window.matchMedia('(hover: none)').matches) {
   document.querySelectorAll('.proj-card').forEach(card => {
     card.addEventListener('click', e => {
       const isAlreadyTapped = card.classList.contains('tapped');

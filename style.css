@@ -387,6 +387,10 @@ body::before{
   .skills-inner{grid-template-columns:1fr;}
   .skill-bar-outer{width:100px;}
   .projects-grid{grid-template-columns:repeat(2,1fr);gap:1rem;}
+}
+
+/* Touch-only devices (phones/tablets) — no hover capability */
+@media(max-width:900px) and (hover:none){
   .proj-card img{filter:grayscale(100%) blur(2px) brightness(0.75);}
   .proj-card:hover img{filter:grayscale(100%) blur(2px) brightness(0.75);transform:none;}
   .proj-card:hover .proj-overlay{opacity:0;}
