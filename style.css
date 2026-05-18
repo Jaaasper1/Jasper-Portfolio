@@ -386,10 +386,8 @@ body::before{
   footer{padding:1.5rem;flex-direction:column;gap:.75rem;}
   .skills-inner{grid-template-columns:1fr;}
   .skill-bar-outer{width:100px;}
-}
-a.proj-card {
-  display: block;
-  text-decoration: none;
-  color: inherit;
-  cursor: pointer;
+  .projects-grid{grid-template-columns:repeat(2,1fr);gap:1rem;}
+  .proj-overlay{opacity:1;}
+  .proj-overlay-title,.proj-overlay-desc,.proj-tags{transform:translateY(0);}
+  .proj-card img{filter:grayscale(0%) blur(0px) brightness(0.7);}
 }
