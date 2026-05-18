@@ -95,33 +95,30 @@ function drawFlashlight() {
 drawFlashlight();
 
 /* MOBILE TAP TO REVEAL PROJECT CARDS */
-// Reset all cards when returning to page
 window.addEventListener('pageshow', () => {
   document.querySelectorAll('.proj-card.tapped').forEach(c => c.classList.remove('tapped'));
 });
 
 document.querySelectorAll('.proj-card').forEach(card => {
-  card.addEventListener('click', e => {
-    const hasLink = card.tagName === 'A' && card.href;
-    const isAlreadyTapped = card.classList.contains('tapped');
+  const hasLink = card.tagName === 'A' && card.getAttribute('href');
 
-    if (hasLink && isAlreadyTapped) {
-      // Second tap — follow the link
-      return;
-    }
-
-    if (hasLink && !isAlreadyTapped) {
-      // First tap — show overlay, block navigation
-      e.preventDefault();
+  if (hasLink) {
+    // Intercept touchstart to block the default tap-to-navigate
+    card.addEventListener('touchstart', e => {
+      if (!card.classList.contains('tapped')) {
+        e.preventDefault();
+        document.querySelectorAll('.proj-card.tapped').forEach(c => c.classList.remove('tapped'));
+        card.classList.add('tapped');
+      }
+      // If already tapped, do nothing — let the default click/navigate happen
+    }, { passive: false });
+  } else {
+    card.addEventListener('click', e => {
+      const isAlreadyTapped = card.classList.contains('tapped');
       document.querySelectorAll('.proj-card.tapped').forEach(c => c.classList.remove('tapped'));
-      card.classList.add('tapped');
-      return;
-    }
-
-    // No link — just toggle
-    document.querySelectorAll('.proj-card.tapped').forEach(c => c.classList.remove('tapped'));
-    if (!isAlreadyTapped) card.classList.add('tapped');
-  });
+      if (!isAlreadyTapped) card.classList.add('tapped');
+    });
+  }
 });
 
 /* SCROLL REVEAL */
