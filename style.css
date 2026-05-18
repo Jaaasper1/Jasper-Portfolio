@@ -231,6 +231,7 @@ nav{
   grid-template-columns:repeat(3,1fr);
   gap:1.2rem;
 }
+a.proj-card{text-decoration:none;}
 .proj-card{
   position:relative;overflow:hidden;border-radius:16px;
   aspect-ratio:4/3;cursor:pointer;
@@ -387,6 +388,7 @@ body::before{
   .skills-inner{grid-template-columns:1fr;}
   .skill-bar-outer{width:100px;}
   .projects-grid{grid-template-columns:repeat(2,1fr);gap:1rem;}
+  .mobile-hidden{display:none;}
 }
 
 /* Touch-only devices (phones/tablets) — no hover capability */
