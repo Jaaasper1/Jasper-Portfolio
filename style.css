@@ -391,16 +391,22 @@ body::before{
 
 /* Touch-only devices (phones/tablets) — no hover capability */
 @media(max-width:900px) and (hover:none){
+  /* Default: grayscale, no overlay */
   .proj-card img{filter:grayscale(100%) blur(2px) brightness(0.75);}
   .proj-card:hover img{filter:grayscale(100%) blur(2px) brightness(0.75);transform:none;}
   .proj-card:hover .proj-overlay{opacity:0;}
-  /* Hide description only */
-  .proj-overlay-desc{display:none !important;}
-  /* Overlay layout — title on top, tags at bottom */
-  .proj-overlay{display:flex;flex-direction:column;justify-content:space-between;align-items:flex-start;padding:1rem;}
-  .proj-overlay-title{font-size:.85rem;transform:none !important;}
-  .proj-tags{display:flex;flex-wrap:wrap;gap:.4rem;transform:none !important;}
-  /* On tap — color image and show overlay */
+  /* Hide description always on mobile */
+  .proj-overlay-desc{display:none;}
+  /* Overlay: title on top, tags at bottom */
+  .proj-overlay{
+    display:flex;flex-direction:column;
+    justify-content:space-between;
+    align-items:flex-start;
+    padding:1rem;
+  }
+  .proj-overlay-title{font-size:.85rem;transform:translateY(0);}
+  .proj-tags{display:flex;flex-wrap:wrap;gap:.4rem;transform:translateY(0);}
+  /* On tap: show color + overlay */
   .proj-card.tapped img{transform:scale(1.07);filter:grayscale(0%) blur(0px) brightness(1);}
   .proj-card.tapped .proj-overlay{opacity:1;}
 }
