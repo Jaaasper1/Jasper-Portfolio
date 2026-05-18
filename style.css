@@ -264,6 +264,7 @@ a.proj-card{text-decoration:none;}
 .proj-card[data-color="gold"] .proj-overlay{background:linear-gradient(to top, rgba(180,120,20,0.92) 0%, rgba(180,120,20,0.55) 55%, transparent 100%);}
 .proj-card[data-color="rose"] .proj-overlay{background:linear-gradient(to top, rgba(190,30,80,0.92) 0%, rgba(190,30,80,0.55) 55%, transparent 100%);}
 .proj-card[data-color="slate"] .proj-overlay{background:linear-gradient(to top, rgba(40,60,90,0.93) 0%, rgba(40,60,90,0.58) 55%, transparent 100%);}
+.proj-card[data-color="violet"] .proj-overlay{background:linear-gradient(to top, rgba(109,40,217,0.93) 0%, rgba(109,40,217,0.58) 55%, transparent 100%);}
 
 .proj-overlay-title{
   font-size:1.05rem;font-weight:800;letter-spacing:-0.01em;
