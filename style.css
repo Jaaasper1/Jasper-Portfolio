@@ -387,6 +387,9 @@ body::before{
   .skills-inner{grid-template-columns:1fr;}
   .skill-bar-outer{width:100px;}
   .projects-grid{grid-template-columns:repeat(2,1fr);gap:1rem;}
+  .proj-card img{filter:grayscale(100%) blur(2px) brightness(0.75);}
+  .proj-card:hover img{filter:grayscale(100%) blur(2px) brightness(0.75);transform:none;}
+  .proj-card:hover .proj-overlay{opacity:0;}
   .proj-card.tapped img{transform:scale(1.07);filter:grayscale(0%) blur(0px) brightness(1);}
   .proj-card.tapped .proj-overlay{opacity:1;}
   .proj-card.tapped .proj-overlay-title,
