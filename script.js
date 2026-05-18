@@ -94,6 +94,19 @@ function drawFlashlight() {
 }
 drawFlashlight();
 
+/* MOBILE TAP TO REVEAL PROJECT CARDS */
+if ('ontouchstart' in window) {
+  document.querySelectorAll('.proj-card').forEach(card => {
+    card.addEventListener('click', e => {
+      const isAlreadyTapped = card.classList.contains('tapped');
+      // Close all others first
+      document.querySelectorAll('.proj-card.tapped').forEach(c => c.classList.remove('tapped'));
+      // Toggle current
+      if (!isAlreadyTapped) card.classList.add('tapped');
+    });
+  });
+}
+
 /* SCROLL REVEAL */
 const obs = new IntersectionObserver(entries => {
   entries.forEach(e => {
