@@ -95,36 +95,34 @@ function drawFlashlight() {
 drawFlashlight();
 
 /* MOBILE TAP TO REVEAL PROJECT CARDS */
-if (window.matchMedia('(hover: none)').matches) {
-  // Reset all cards when returning to page
-  window.addEventListener('pageshow', () => {
-    document.querySelectorAll('.proj-card.tapped').forEach(c => c.classList.remove('tapped'));
-  });
+// Reset all cards when returning to page
+window.addEventListener('pageshow', () => {
+  document.querySelectorAll('.proj-card.tapped').forEach(c => c.classList.remove('tapped'));
+});
 
-  document.querySelectorAll('.proj-card').forEach(card => {
-    card.addEventListener('click', e => {
-      const hasLink = card.tagName === 'A' && card.href;
-      const isAlreadyTapped = card.classList.contains('tapped');
+document.querySelectorAll('.proj-card').forEach(card => {
+  card.addEventListener('click', e => {
+    const hasLink = card.tagName === 'A' && card.href;
+    const isAlreadyTapped = card.classList.contains('tapped');
 
-      if (hasLink && isAlreadyTapped) {
-        // Second tap — follow the link
-        return;
-      }
+    if (hasLink && isAlreadyTapped) {
+      // Second tap — follow the link
+      return;
+    }
 
-      if (hasLink && !isAlreadyTapped) {
-        // First tap — show overlay, block navigation
-        e.preventDefault();
-        document.querySelectorAll('.proj-card.tapped').forEach(c => c.classList.remove('tapped'));
-        card.classList.add('tapped');
-        return;
-      }
-
-      // No link — just toggle
+    if (hasLink && !isAlreadyTapped) {
+      // First tap — show overlay, block navigation
+      e.preventDefault();
       document.querySelectorAll('.proj-card.tapped').forEach(c => c.classList.remove('tapped'));
-      if (!isAlreadyTapped) card.classList.add('tapped');
-    });
+      card.classList.add('tapped');
+      return;
+    }
+
+    // No link — just toggle
+    document.querySelectorAll('.proj-card.tapped').forEach(c => c.classList.remove('tapped'));
+    if (!isAlreadyTapped) card.classList.add('tapped');
   });
-}
+});
 
 /* SCROLL REVEAL */
 const obs = new IntersectionObserver(entries => {

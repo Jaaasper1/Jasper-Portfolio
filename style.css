@@ -392,7 +392,7 @@ body::before{
 }
 
 /* Touch-only devices (phones/tablets) — no hover capability */
-@media(max-width:900px) and (hover:none){
+@media(max-width:900px){
   .proj-card img{filter:grayscale(100%) blur(2px) brightness(0.75);}
   .proj-card:hover img{filter:grayscale(100%) blur(2px) brightness(0.75);transform:none;}
   .proj-card:hover .proj-overlay{opacity:0;}
