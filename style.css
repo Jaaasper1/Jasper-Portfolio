@@ -405,7 +405,8 @@ body::before{
     padding:1rem;
   }
   .proj-overlay-title{font-size:.85rem;transform:translateY(0);}
-  .proj-tags{display:flex;flex-wrap:wrap;gap:.4rem;transform:translateY(0);}
+  .proj-tags{display:flex;flex-wrap:wrap;flex-direction:row;gap:.3rem;transform:translateY(0);}
+  .proj-tag{font-size:.55rem;padding:.2rem .5rem;}
   /* On tap: show color + overlay */
   .proj-card.tapped img{transform:scale(1.07);filter:grayscale(0%) blur(0px) brightness(1);}
   .proj-card.tapped .proj-overlay{opacity:1;}
