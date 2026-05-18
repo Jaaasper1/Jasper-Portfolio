@@ -394,12 +394,12 @@ body::before{
   .proj-card img{filter:grayscale(100%) blur(2px) brightness(0.75);}
   .proj-card:hover img{filter:grayscale(100%) blur(2px) brightness(0.75);transform:none;}
   .proj-card:hover .proj-overlay{opacity:0;}
-  /* Hide title and desc on mobile — tags only */
-  .proj-overlay-title,.proj-overlay-desc{display:none;}
+  /* Always hide title and desc on mobile */
+  .proj-overlay-title,.proj-overlay-desc{display:none !important;}
+  /* Tags centered at bottom always ready */
+  .proj-overlay{display:flex;align-items:flex-end;justify-content:center;padding:1rem;}
+  .proj-tags{display:flex;flex-wrap:wrap;justify-content:center;gap:.4rem;transform:none !important;}
+  /* On tap — color image and show overlay with tags */
   .proj-card.tapped img{transform:scale(1.07);filter:grayscale(0%) blur(0px) brightness(1);}
   .proj-card.tapped .proj-overlay{opacity:1;}
-  .proj-card.tapped .proj-tags{transform:translateY(0);}
-  /* Center the tags at the bottom */
-  .proj-card.tapped .proj-overlay{display:flex;align-items:flex-end;justify-content:center;padding:1rem;}
-  .proj-card.tapped .proj-tags{display:flex;flex-wrap:wrap;justify-content:center;gap:.4rem;}
 }
