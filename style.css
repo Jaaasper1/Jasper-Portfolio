@@ -389,5 +389,4 @@ body::before{
   .projects-grid{grid-template-columns:repeat(2,1fr);gap:1rem;}
   .proj-overlay{opacity:1;}
   .proj-overlay-title,.proj-overlay-desc,.proj-tags{transform:translateY(0);}
-  .proj-card img{filter:grayscale(0%) blur(0px) brightness(0.7);}
 }
