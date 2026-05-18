@@ -96,17 +96,31 @@ drawFlashlight();
 
 /* MOBILE TAP TO REVEAL PROJECT CARDS */
 if (window.matchMedia('(hover: none)').matches) {
-  // Reset all cards when returning to page (e.g. after visiting a project link)
+  // Reset all cards when returning to page
   window.addEventListener('pageshow', () => {
     document.querySelectorAll('.proj-card.tapped').forEach(c => c.classList.remove('tapped'));
   });
 
   document.querySelectorAll('.proj-card').forEach(card => {
     card.addEventListener('click', e => {
+      const hasLink = card.tagName === 'A' && card.href;
       const isAlreadyTapped = card.classList.contains('tapped');
-      // Close all others first
+
+      if (hasLink && isAlreadyTapped) {
+        // Second tap — follow the link
+        return;
+      }
+
+      if (hasLink && !isAlreadyTapped) {
+        // First tap — show overlay, block navigation
+        e.preventDefault();
+        document.querySelectorAll('.proj-card.tapped').forEach(c => c.classList.remove('tapped'));
+        card.classList.add('tapped');
+        return;
+      }
+
+      // No link — just toggle
       document.querySelectorAll('.proj-card.tapped').forEach(c => c.classList.remove('tapped'));
-      // Toggle current
       if (!isAlreadyTapped) card.classList.add('tapped');
     });
   });
