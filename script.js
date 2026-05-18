@@ -96,6 +96,11 @@ drawFlashlight();
 
 /* MOBILE TAP TO REVEAL PROJECT CARDS */
 if (window.matchMedia('(hover: none)').matches) {
+  // Reset all cards when returning to page (e.g. after visiting a project link)
+  window.addEventListener('pageshow', () => {
+    document.querySelectorAll('.proj-card.tapped').forEach(c => c.classList.remove('tapped'));
+  });
+
   document.querySelectorAll('.proj-card').forEach(card => {
     card.addEventListener('click', e => {
       const isAlreadyTapped = card.classList.contains('tapped');
