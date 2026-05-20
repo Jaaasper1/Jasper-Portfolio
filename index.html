@@ -8,6 +8,9 @@
 </head>
 <body>
 
+<div id="scroll-progress"></div>
+<canvas id="particle-canvas"></canvas>
+
 <div id="cursor"></div>
 <div id="cursor-ring"></div>
 
@@ -23,14 +26,16 @@
     <span></span><span></span><span></span>
   </button>
   <div class="nav-right" id="navRight">
-    <a class="nav-link" href="#about" onclick="closeNav()">About</a>
     <a class="nav-link" href="#work" onclick="closeNav()">Projects</a>
-    <a class="nav-link" href="#skills" onclick="closeNav()">Skills</a>
-    <a class="nav-btn" href="#contact" onclick="closeNav()">Contact</a>
+    <a class="nav-link" href="#certificates" onclick="closeNav()">Credentials</a>
+    <a class="nav-link" href="#services" onclick="closeNav()">Services</a>
+    <a class="nav-link" href="#about" onclick="closeNav()">About</a>
+    <a class="nav-link" href="#education" onclick="closeNav()">Education</a>
+    <a class="nav-link" href="#contact" onclick="closeNav()">Contact</a>
   </div>
 </nav>
 
-<!-- HERO -->
+<!-- 1. HERO -->
 <section id="hero">
   <div class="hero-left">
     <p class="hero-eyebrow">Student &middot; Gamer</p>
@@ -81,25 +86,9 @@
     <span class="marquee-item">Presentation<span class="marquee-dot"></span></span>
   </div>
 </div>
+<span class="glow-line"></span>
 
-<!-- ABOUT -->
-<section id="about">
-  <div class="about-inner">
-    <div>
-      <p class="section-num reveal">01 &mdash; About</p>
-      <h2 class="about-title reveal">Built on <em>discipline,</em><br>driven by passion.</h2>
-      <p class="about-text reveal">Hi, I'm Jasper Celestial &mdash; a hardworking student and passionate gamer, dedicated to mastering challenges both in the classroom and in the virtual world.</p>
-      <p class="about-text reveal">Over the years, I've balanced academics and gaming, building discipline, strategy, and creativity along the way. My goal is to keep learning, improving, and inspiring others through my journey.</p>
-    </div>
-    <div class="reveal" style="padding-top:3rem;">
-      <div class="trait"><span class="trait-name">Student</span><span class="trait-tag">Academics</span></div>
-      <div class="trait"><span class="trait-name">Gamer</span><span class="trait-tag">Strategy</span></div>
-      <div class="trait"><span class="trait-name">Designer</span><span class="trait-tag">Visual</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- WORK -->
+<!-- 2. WORK / PROJECTS -->
 <section id="work">
   <div class="work-header reveal">
     <h2 class="work-title">My Projects</h2>
@@ -107,7 +96,6 @@
   </div>
   <div class="projects-grid reveal">
 
-    <!-- 1: 3D Game Development -->
     <div class="proj-card" data-color="indigo">
       <img src="picture/Game.png" alt="3D Game Development">
       <div class="proj-overlay">
@@ -121,8 +109,7 @@
       </div>
     </div>
 
-    <!-- 2: Tajam Creative Agency -->
-    <a class="proj-card" data-color="gold" href ="https://jaspertajam.netlify.app" target="_blank">
+    <a class="proj-card" data-color="gold" href="https://jaspertajam.netlify.app" target="_blank">
       <img src="picture/Tajam.jpg" alt="Tajam Creative Agency">
       <div class="proj-overlay">
         <div class="proj-overlay-title">Tajam — Creative Agency</div>
@@ -135,7 +122,6 @@
       </div>
     </a>
 
-    <!-- 3: Brochure Project -->
     <a class="proj-card" data-color="teal" href="https://brochureg2.netlify.app" target="_blank">
       <img src="picture/brochure.PNG" alt="GNC Brochure Website">
       <div class="proj-overlay">
@@ -149,7 +135,6 @@
       </div>
     </a>
 
-    <!-- 4: MedSystem -->
     <a class="proj-card" data-color="teal" href="https://medsystemg3.infinityfreeapp.com" target="_blank">
       <img src="picture/Med.PNG" alt="MedSystem Hospital Management">
       <div class="proj-overlay">
@@ -164,7 +149,6 @@
       </div>
     </a>
 
-    <!-- 6: HabitQuest -->
     <a class="proj-card" data-color="violet" href="https://quest.infinityfreeapp.com/" target="_blank">
       <img src="picture/habitquest.PNG" alt="HabitQuest">
       <div class="proj-overlay">
@@ -174,14 +158,12 @@
           <span class="proj-tag">PHP</span>
           <span class="proj-tag">CSS</span>
           <span class="proj-tag">JS</span>
-          <span class="proj-tag">MYSQL</span>
         </div>
       </div>
     </a>
 
-    <!-- 5: Activity Project -->
     <div class="proj-card" data-color="slate">
-      <img src="picture/TEST.jpg" alt="GNC Quality Activity Project">
+      <img src="picture/TEST.jpg" alt="Activity Project">
       <div class="proj-overlay">
         <div class="proj-overlay-title">Activity Project</div>
         <div class="proj-overlay-desc">A visual design activity project featuring aerial photography and typographic layout in Figma.</div>
@@ -196,11 +178,118 @@
   </div>
 </section>
 
-<!-- SKILLS -->
+<!-- 3. CERTIFICATES -->
+<section id="certificates">
+  <div class="cert-inner">
+    <div class="reveal">
+      <p class="section-num">02 &mdash; Credentials</p>
+      <h2 class="cert-heading">MY<br><em>CREDENTIALS.</em></h2>
+    </div>
+    <div class="cert-grid reveal">
+      <div class="cert-card">
+        <div class="cert-badge">&#x2605;</div>
+        <div class="cert-info">
+          <div class="cert-title">IT Specialist — Networking</div>
+          <div class="cert-issuer">CertNexus &middot; Pearson VUE &middot; Certiport</div>
+          <div class="cert-date">January 27, 2026 &nbsp;|&nbsp; Expires Jan 27, 2031</div>
+          <div class="cert-id">ID: LQkS-s4Ah &nbsp;|&nbsp; verify.certiport.com</div>
+          <div class="cert-tags">
+            <span class="cert-tag">Certificate</span>
+          </div>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-badge">&#x2605;</div>
+        <div class="cert-info">
+          <div class="cert-title">CCNA: Introduction to Networks</div>
+          <div class="cert-issuer">Cisco</div>
+          <div class="cert-date">Issued January 31, 2026</div>
+          <div class="cert-id">Verified &nbsp;|&nbsp; credly.com/users/jasper-celestial</div>
+          <div class="cert-tags">
+            <span class="cert-tag">Badge</span>
+          </div>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-badge">&#x2605;</div>
+        <div class="cert-info">
+          <div class="cert-title">IT Essentials</div>
+          <div class="cert-issuer">Cisco</div>
+          <div class="cert-date">Issued February 15, 2024</div>
+          <div class="cert-id">Verified &nbsp;|&nbsp; credly.com/users/jasper-celestial</div>
+          <div class="cert-tags">
+            <span class="cert-tag">Badge</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. SERVICES -->
+<section id="services">
+  <div class="services-inner">
+    <div class="reveal">
+      <p class="section-num">03 &mdash; What I Offer</p>
+      <h2 class="services-heading">HOW I<br><em>HELP.</em></h2>
+    </div>
+    <div class="services-grid reveal">
+
+      <div class="svc-card">
+        <div class="svc-icon">&#x270F;</div>
+        <h3 class="svc-title">UI/UX Design</h3>
+        <p class="svc-desc">Creating clean, intuitive interfaces and user experiences using Figma and Canva — from wireframes to polished visual layouts.</p>
+      </div>
+
+      <div class="svc-card">
+        <div class="svc-icon">&#x1F5A8;</div>
+        <h3 class="svc-title">Printing</h3>
+        <p class="svc-desc">Designing and producing print-ready materials — tarpaulins, ID layouts, brochures, and more with proper formatting and resolution.</p>
+      </div>
+
+      <div class="svc-card">
+        <div class="svc-icon">&#x1F4B3;</div>
+        <h3 class="svc-title">Digital Payment Services</h3>
+        <p class="svc-desc">Facilitating seamless digital transactions — cash in, cash out, and money transfers through trusted digital payment platforms.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 5. ABOUT -->
+<section id="about">
+  <div class="about-inner">
+    <div>
+      <p class="section-num reveal">04 &mdash; About</p>
+      <h2 class="about-title reveal">About <em>Me.</em></h2>
+      <p class="about-text reveal">Hi, I'm Jasper Celestial &mdash; a hardworking student and passionate gamer, dedicated to mastering challenges both in the classroom and in the virtual world.</p>
+      <p class="about-text reveal">Over the years, I've balanced academics and gaming, building discipline, strategy, and creativity along the way. My goal is to keep learning, improving, and inspiring others through my journey.</p>
+      <div class="reveal" style="padding-top:1.5rem;">
+        <div class="trait"><span class="trait-name">Student</span><span class="trait-tag">Academics</span></div>
+        <div class="trait"><span class="trait-name">Gamer</span><span class="trait-tag">Strategy</span></div>
+        <div class="trait"><span class="trait-name">Designer</span><span class="trait-tag">Visual</span></div>
+      </div>
+    </div>
+    <div class="about-photo-wrap reveal">
+      <div class="about-photo-frame" id="aboutPhotoWrap">
+        <img src="picture/grad.jpg" alt="Jasper Celestial" class="about-photo-img">
+        <canvas id="aboutFlashCanvas"></canvas>
+        <div class="photo-corner pc-tl"></div>
+        <div class="photo-corner pc-tr"></div>
+        <div class="photo-corner pc-bl"></div>
+        <div class="photo-corner pc-br"></div>
+        <div class="photo-name">Jasper Celestial</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. SKILLS -->
 <section id="skills">
   <div class="skills-inner">
     <div>
-      <p class="section-num reveal">02 &mdash; Expertise</p>
+      <p class="section-num reveal">05 &mdash; Expertise</p>
       <h2 class="skills-heading reveal">MY<br><em>SKILL</em><br>SET.</h2>
     </div>
     <div>
@@ -220,6 +309,47 @@
         <div><div class="skill-name">UI Design</div><div class="skill-sub">Layouts, interfaces, visual systems</div></div>
         <div class="skill-bar-outer"><div class="skill-bar-inner" data-w="70"></div></div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. EDUCATION -->
+<section id="education">
+  <div class="edu-inner">
+    <div class="reveal">
+      <p class="section-num">06 &mdash; Education</p>
+      <h2 class="edu-heading">MY<br><em>EDUCATION.</em></h2>
+    </div>
+    <div class="edu-grid reveal">
+      <div class="edu-card">
+        <div class="edu-year-wrap">
+          <span class="edu-year">2022</span>
+          <span class="edu-year-line"></span>
+          <span class="edu-year">Present</span>
+        </div>
+        <div class="edu-info">
+          <div class="edu-school">Guagua National Colleges</div>
+          <div class="edu-course">Bachelor of Science in Information Technology</div>
+          <div class="edu-detail">3rd Year Student</div>
+          <div class="edu-tags">
+            <span class="cert-tag">BS Information Technology</span>
+            <span class="cert-tag">3rd Year</span>
+            <span class="cert-tag">GNC</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section id="cta-banner">
+  <div class="cta-banner-inner reveal">
+    <p class="cta-banner-eyebrow">07 &mdash; Let's Work Together</p>
+    <h2 class="cta-banner-heading">Ready to bring your<br><em>ideas to life?</em></h2>
+    <p class="cta-banner-sub">Whether it's a design project, a print job, or a digital solution — I'm here and ready to collaborate. Let's make something great.</p>
+    <div class="cta-banner-btns">
+      <a href="#contact" class="btn btn-gold">Get in Touch</a>
     </div>
   </div>
 </section>
