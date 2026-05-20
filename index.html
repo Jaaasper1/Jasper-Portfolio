@@ -186,7 +186,7 @@
       <h2 class="cert-heading">MY<br><em>CREDENTIALS.</em></h2>
     </div>
     <div class="cert-grid reveal">
-      <div class="cert-card">
+      <div class="cert-card" data-cert="picture/cert_itspecialist.jpg">
         <div class="cert-badge">&#x2605;</div>
         <div class="cert-info">
           <div class="cert-title">IT Specialist — Networking</div>
@@ -197,8 +197,12 @@
             <span class="cert-tag">Certificate</span>
           </div>
         </div>
+        <div class="cert-preview-overlay">
+          <img src="picture/cert_itspecialist.jpg" alt="IT Specialist Certificate" class="cert-preview-img">
+        </div>
+        <span class="cert-tap-hint">Tap to view certificate</span>
       </div>
-      <div class="cert-card">
+      <div class="cert-card" data-cert="picture/cert_ccna.jpg">
         <div class="cert-badge">&#x2605;</div>
         <div class="cert-info">
           <div class="cert-title">CCNA: Introduction to Networks</div>
@@ -207,10 +211,15 @@
           <div class="cert-id">Verified &nbsp;|&nbsp; credly.com/users/jasper-celestial</div>
           <div class="cert-tags">
             <span class="cert-tag">Badge</span>
+            <span class="cert-tag">Certificate</span>
           </div>
         </div>
+        <div class="cert-preview-overlay">
+          <img src="picture/cert_ccna.jpg" alt="CCNA Certificate" class="cert-preview-img">
+        </div>
+        <span class="cert-tap-hint">Tap to view certificate</span>
       </div>
-      <div class="cert-card">
+      <div class="cert-card" data-cert="picture/cert_itessentials.jpg">
         <div class="cert-badge">&#x2605;</div>
         <div class="cert-info">
           <div class="cert-title">IT Essentials</div>
@@ -219,8 +228,13 @@
           <div class="cert-id">Verified &nbsp;|&nbsp; credly.com/users/jasper-celestial</div>
           <div class="cert-tags">
             <span class="cert-tag">Badge</span>
+            <span class="cert-tag">Certificate</span>
           </div>
         </div>
+        <div class="cert-preview-overlay">
+          <img src="picture/cert_itessentials.jpg" alt="IT Essentials Certificate" class="cert-preview-img">
+        </div>
+        <span class="cert-tap-hint">Tap to view certificate</span>
       </div>
     </div>
   </div>
@@ -231,20 +245,20 @@
   <div class="services-inner">
     <div class="reveal">
       <p class="section-num">03 &mdash; What I Offer</p>
-      <h2 class="services-heading">HOW I<br><em>CAN HELP.</em></h2>
+      <h2 class="services-heading">HOW MAY I<br><em>HELP.</em></h2>
     </div>
     <div class="services-grid reveal">
 
       <div class="svc-card">
         <div class="svc-icon">&#x270F;</div>
         <h3 class="svc-title">UI/UX Design</h3>
-        <p class="svc-desc">Creating clean, intuitive interfaces and user experiences using Figma and Canva </p>
+        <p class="svc-desc">Creating clean, intuitive interfaces and user experiences using Figma and Canva — from wireframes to polished visual layouts.</p>
       </div>
 
       <div class="svc-card">
         <div class="svc-icon">&#x1F5A8;</div>
         <h3 class="svc-title">Printing</h3>
-        <p class="svc-desc">Designing and producing print-ready materials — ID layouts, brochures, and more with proper formatting and resolution.</p>
+        <p class="svc-desc">Designing and producing print-ready materials — tarpaulins, ID layouts, brochures, and more with proper formatting and resolution.</p>
       </div>
 
       <div class="svc-card">
@@ -385,6 +399,14 @@
   <span class="footer-copy">&copy; 2026 Jasper Celestial</span>
   <span class="footer-made">Think. Build. Repeat.</span>
 </footer>
+
+<!-- CERT LIGHTBOX -->
+<div class="cert-lightbox" id="certLightbox">
+  <div class="cert-lightbox-inner">
+    <img src="" alt="Certificate" class="cert-lightbox-img" id="certLightboxImg">
+    <button class="cert-lightbox-close" id="certLightboxClose">&#x2715;</button>
+  </div>
+</div>
 
 <script src="script.js"></script>
 </body>

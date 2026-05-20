@@ -67,7 +67,7 @@ function drawFlashlight() {
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     // Cut out flashlight cone
-    const radius = 370;
+    const radius = 220;
     const gradient = ctx.createRadialGradient(flashX, flashY, 0, flashX, flashY, radius);
     gradient.addColorStop(0, 'rgba(0,0,0,1)');
     gradient.addColorStop(0.35, 'rgba(0,0,0,0.85)');
@@ -198,7 +198,7 @@ function drawAboutFlashlight() {
     aboutCtx.fillStyle = 'rgba(0,0,0,0.88)';
     aboutCtx.fillRect(0, 0, aboutCanvas.width, aboutCanvas.height);
 
-    const radius = 370;
+    const radius = 200;
     const gradient = aboutCtx.createRadialGradient(aFlashX, aFlashY, 0, aFlashX, aFlashY, radius);
     gradient.addColorStop(0, 'rgba(0,0,0,1)');
     gradient.addColorStop(0.35, 'rgba(0,0,0,0.85)');
@@ -353,4 +353,50 @@ window.addEventListener('scroll', () => {
   const heroRight = document.querySelector('.hero-right');
   if (heroLeft) heroLeft.style.transform = `translateY(${scrollY * 0.12}px)`;
   if (heroRight) heroRight.style.transform = `translateY(${scrollY * 0.07}px)`;
+});
+
+/* ── CERT LIGHTBOX (desktop) + TAP TO REVEAL (mobile) ── */
+const certLightbox = document.getElementById('certLightbox');
+const certLightboxImg = document.getElementById('certLightboxImg');
+const certLightboxClose = document.getElementById('certLightboxClose');
+
+document.querySelectorAll('.cert-card').forEach(card => {
+  card.addEventListener('click', (e) => {
+    const isMobile = window.innerWidth <= 768;
+    const imgSrc = card.dataset.cert;
+
+    if (isMobile) {
+      // Mobile: tap to reveal inside card
+      const isActive = card.classList.contains('active');
+      document.querySelectorAll('.cert-card').forEach(c => {
+        c.classList.remove('active');
+        const hint = c.querySelector('.cert-tap-hint');
+        if (hint) hint.textContent = 'Tap to view certificate';
+      });
+      if (!isActive) {
+        card.classList.add('active');
+        const hint = card.querySelector('.cert-tap-hint');
+        if (hint) hint.textContent = 'Tap to hide';
+      }
+    } else {
+      // Desktop: open lightbox
+      if (!imgSrc) return;
+      certLightboxImg.src = imgSrc;
+      certLightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+  });
+});
+
+// Close lightbox
+function closeLightbox() {
+  certLightbox.classList.remove('open');
+  document.body.style.overflow = '';
+}
+if (certLightboxClose) certLightboxClose.addEventListener('click', closeLightbox);
+if (certLightbox) certLightbox.addEventListener('click', (e) => {
+  if (e.target === certLightbox) closeLightbox();
+});
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeLightbox();
 });
