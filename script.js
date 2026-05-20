@@ -67,7 +67,7 @@ function drawFlashlight() {
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     // Cut out flashlight cone
-    const radius = 220;
+    const radius = 330;
     const gradient = ctx.createRadialGradient(flashX, flashY, 0, flashX, flashY, radius);
     gradient.addColorStop(0, 'rgba(0,0,0,1)');
     gradient.addColorStop(0.35, 'rgba(0,0,0,0.85)');
@@ -198,7 +198,7 @@ function drawAboutFlashlight() {
     aboutCtx.fillStyle = 'rgba(0,0,0,0.88)';
     aboutCtx.fillRect(0, 0, aboutCanvas.width, aboutCanvas.height);
 
-    const radius = 200;
+    const radius = 330;
     const gradient = aboutCtx.createRadialGradient(aFlashX, aFlashY, 0, aFlashX, aFlashY, radius);
     gradient.addColorStop(0, 'rgba(0,0,0,1)');
     gradient.addColorStop(0.35, 'rgba(0,0,0,0.85)');
